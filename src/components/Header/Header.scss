@@ -1,0 +1,28 @@
+@use "../../styles/partials/mixins" as mixins;
+
+.header {
+    &__wrapper {
+        @include mixins.wrapper;
+    }
+
+    &__logo {}
+
+    &__image {}
+
+    &__user {}
+
+    &__avatar {
+        height: 3.6rem;
+        width: 3.6rem;
+        border-radius: 50%;
+        margin-right: 1.6rem;
+        object-fit: cover;
+        background-color: #E1E1E1;
+        flex: 0 0 auto;
+
+        @include mixins.tablet {
+            height: 4rem;
+            width: 4rem;
+        }
+    }
+}
