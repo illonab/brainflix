@@ -1,0 +1,21 @@
+@use "../../styles/partials/mixins" as mixins;
+
+.video-list {
+
+    @include mixins.desktop {
+        flex: 2;
+        border-left: 1px solid #E1E1E1;
+        padding-left: 2.4rem;
+        @include mixins.section-spacing;
+    }
+
+
+    &__title {
+        @include mixins.text-label;
+        margin-bottom: 1.6rem;
+
+        @include mixins.tablet {
+            margin-bottom: 2.4rem;
+        }
+    }
+}
