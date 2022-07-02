@@ -1,0 +1,51 @@
+@use "../../styles/partials/mixins" as mixins;
+
+.comment {
+    display: flex;
+    @include mixins.text;
+    display: flex;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid #E1E1E1;
+
+    &+& {
+        margin-top: 1.6rem;
+    }
+
+    &__avatar {
+
+        @include mixins.desktop {
+            margin-right: 2.4rem;
+        }
+    }
+
+    &__comment {}
+
+    &__content {
+        flex: 1;
+    }
+
+    &__name {
+        font-weight: 700;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+
+        @include mixins.desktop {
+            padding-right: 2.4rem;
+        }
+    }
+
+    &__date {
+        @include mixins.text-label;
+    }
+
+    &__text {
+        margin-top: 1.6rem;
+
+        @include mixins.desktop {
+            padding-right: 2.4rem;
+        }
+    }
+}
