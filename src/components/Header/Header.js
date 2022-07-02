@@ -1,7 +1,6 @@
 import logoImage from "../../assets/logo/brainflix-logo.svg";
-import userImage from "../../assets/images/mohan-muruge.jpg";
-import Form from "../Form/Form";
 import "./Header.scss";
+import Avatar from "../Avatar/Avatar";
 
 function Header() {
   return (
@@ -10,14 +9,23 @@ function Header() {
         <div className="header__logo">
           <img src={logoImage} alt="Brainflix logo" className="header__image" />
         </div>
-        <Form />
-        <div className="header__user">
-          <img
-            src={userImage}
-            alt="Brainflix logo"
-            className="header__avatar"
+        <div className="header__container">
+          <input
+            className="header__search"
+            type="text"
+            name="search"
+            placeholder="Search"
           />
+
+          <Avatar className="header__avatar header__avatar--mobile" />
         </div>
+        <input
+          className="header__upload cta-btn"
+          type="submit"
+          name="submit"
+          value="Upload"
+        />
+        <Avatar className="header__avatar header__avatar--tablet" />
       </div>
     </div>
   );
