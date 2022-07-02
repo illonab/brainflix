@@ -1,0 +1,28 @@
+@use "../../styles/partials/mixins" as mixins;
+
+.main-video {
+    background-color: #000;
+
+    &__wrapper {
+
+        @include mixins.tablet {
+            @include mixins.wrapper;
+        }
+
+        @include mixins.desktop {
+            width: 113rem;
+        }
+
+    }
+
+    &__video {
+        height: 20rem;
+        width: 100%;
+        object-fit: cover;
+
+        @include mixins.tablet {
+            height: 45rem;
+        }
+
+    }
+}
