@@ -28,10 +28,7 @@
         @include mixins.tablet {
             display: flex;
             align-items: end;
-
-
         }
-
     }
 
     &__control {
@@ -40,9 +37,6 @@
         font-weight: 700;
         @include mixins.text-label;
         flex: 1;
-
-        @include mixins.tablet {}
-
     }
 
     &__comment {
@@ -68,7 +62,7 @@
     }
 
     &__submit {
-        @include mixins.upload-icon('../../assets/icon/add_comment.svg');
+        @include mixins.btn-icon('../../assets/icon/add_comment.svg');
         margin-top: 1.6rem;
     }
 }

@@ -1,5 +1,5 @@
 import "./Comment.scss";
-import { formatDateString } from "../../utils";
+import { formatDate } from "../../utils";
 
 function Comment(props) {
   return (
@@ -9,7 +9,7 @@ function Comment(props) {
         <div className="comment__top">
           <p className="comment__name">{props.comment.name}</p>
           <time className="comment__date" title="">
-            {formatDateString(props.comment.timestamp)}
+            {formatDate(props.comment.timestamp)}
           </time>
         </div>
         <p className="comment__text">{props.comment.comment}</p>

@@ -84,7 +84,7 @@
     }
 }
 
-@mixin upload-icon($url) {
+@mixin btn-icon($url) {
     background-image: url($url);
     background-repeat: no-repeat;
     background-position: 8px 8px;

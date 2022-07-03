@@ -24,4 +24,5 @@ function CommentForm() {
     </form>
   );
 }
+
 export default CommentForm;

@@ -4,13 +4,11 @@
 @use "styles/partials/cta-btn" as *;
 
 .main {
-
     &__wrapper {
         @include mixins.wrapper;
 
         @include mixins.desktop {
             display: flex;
         }
-
     }
 }

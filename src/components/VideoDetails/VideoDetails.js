@@ -1,6 +1,6 @@
 import CommentForm from "../CommentForm/CommentForm";
 import CommentsList from "../CommentsList/CommentsList";
-import { formatDateString } from "../../utils";
+import { formatDate } from "../../utils";
 import "./VideoDetails.scss";
 
 function VideoDetails(props) {
@@ -13,7 +13,7 @@ function VideoDetails(props) {
             <div className="video-details__left">
               <p className="video-details__author">{props.details.channel}</p>
               <time className="video-details__date">
-                {formatDateString(props.details.timestamp)}
+                {formatDate(props.details.timestamp)}
               </time>
             </div>
             <div className="video-details__right">

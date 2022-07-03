@@ -2,7 +2,6 @@
 @use "../../styles/partials/cta-btn" as *;
 
 .header {
-
     padding: 2.4rem 0 1.6rem 0;
 
     &__wrapper {
@@ -11,7 +10,6 @@
         @include mixins.tablet {
             display: flex;
         }
-
     }
 
     &__logo {
@@ -24,7 +22,6 @@
             align-items: center;
             flex: 1;
         }
-
     }
 
     &__image {
@@ -51,7 +48,6 @@
         background: url(../../assets/icon/search.svg) no-repeat scroll 8px 11px;
         height: 3.6rem;
         background-color: #FAFAFA;
-
 
         &::placeholder {
             color: #000;
@@ -86,7 +82,7 @@
     }
 
     &__upload {
-        @include mixins.upload-icon('../../assets/icon/upload.svg');
+        @include mixins.btn-icon('../../assets/icon/upload.svg');
 
         @include mixins.tablet {
             margin-right: 1.6rem;

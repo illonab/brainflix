@@ -10,4 +10,5 @@ function CommentsList(props) {
     </div>
   );
 }
+
 export default CommentsList;

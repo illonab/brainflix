@@ -4,16 +4,12 @@
     @include mixins.section-spacing;
 
     @include mixins.desktop {
-        flex: 8;
-
+        flex: 8.5;
     }
-
-    &__wrapper {}
 
     &__title {
         @include mixins.pageHeader;
     }
-
 
     &__info {
         display: flex;
@@ -26,7 +22,6 @@
             border-top: none;
             padding: 0;
         }
-
     }
 
     &__left {
@@ -55,7 +50,6 @@
         @include mixins.tablet {
             margin-top: 0.2rem;
         }
-
     }
 
     &__right {
@@ -74,12 +68,14 @@
 
     &__views {
         margin-bottom: 1.6rem;
+        display: flex;
+        align-items: center;
 
         &::before {
             content: url('../../assets/icon/views.svg');
             display: inline-block;
             margin-right: 1rem;
-
+            height: 1.5rem;
         }
 
         @include mixins.tablet {
@@ -89,13 +85,18 @@
     }
 
     &__likes {
+        display: flex;
+        align-items: center;
 
         &::before {
             content: url('../../assets/icon/likes.svg');
             display: inline-block;
             margin-right: 1rem;
+            height: 1.6rem;
+        }
 
-
+        @include mixins.tablet {
+            margin-bottom: 1.6rem;
         }
     }
 
