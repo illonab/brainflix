@@ -11,7 +11,9 @@ function VideoDetails(props) {
         <div className="video-details__undeline">
           <div className="video-details__info">
             <div className="video-details__left">
-              <p className="video-details__author">{props.details.channel}</p>
+              <p className="video-details__author">
+                By {props.details.channel}
+              </p>
               <time className="video-details__date">
                 {formatDate(props.details.timestamp)}
               </time>
