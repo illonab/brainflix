@@ -11,9 +11,17 @@ class App extends Component {
   state = {
     videosData,
     videoDetailsData,
-    mainVideo: videoDetailsData[3],
+    mainVideo: videoDetailsData[0],
   };
 
+  changeActiveVideo = (id) => {
+    console.log("CHANE ACTIVE VIDEO HAD BEEN CALLED");
+    this.setState({
+      mainVideo: this.state.videoDetailsData.find((video) => {
+        return video.id === id;
+      }),
+    });
+  };
   render() {
     return (
       <>
@@ -25,6 +33,7 @@ class App extends Component {
             <VideoList
               list={this.state.videosData}
               mainVideo={this.state.mainVideo}
+              changeActiveVideo={this.changeActiveVideo}
             />
           </div>
         </main>
