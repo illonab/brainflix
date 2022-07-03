@@ -1,7 +1,6 @@
 import "./Video.scss";
 
 function Video(props) {
-  console.log(props);
   const clickHandler = () => {
     props.changeActiveVideo(props.video.id);
   };
