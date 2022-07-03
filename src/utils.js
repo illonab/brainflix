@@ -8,7 +8,7 @@ const monthDiff = (d1, d2) => {
   return months <= 0 ? 0 : months;
 };
 
-export const formatDateString = (timestamp) => {
+export const formatDate = (timestamp) => {
   const timestampDate = new Date(timestamp);
 
   if (monthDiff(timestampDate, new Date()) < 1) {

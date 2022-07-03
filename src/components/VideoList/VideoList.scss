@@ -3,12 +3,11 @@
 .video-list {
 
     @include mixins.desktop {
-        flex: 2;
+        flex: 4;
         border-left: 1px solid #E1E1E1;
         padding-left: 2.4rem;
         @include mixins.section-spacing;
     }
-
 
     &__title {
         @include mixins.text-label;

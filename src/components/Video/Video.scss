@@ -2,6 +2,8 @@
 
 .video {
     display: flex;
+    margin-bottom: 1.6rem;
+    cursor: pointer;
 
     @include mixins.tablet {
         width: 50%;
@@ -19,21 +21,12 @@
         margin-right: 1.6rem;
         object-fit: cover;
         flex: 0 0 auto;
-        margin-bottom: 1.6rem;
-
-        @include mixins.desktop {
-            margin-bottom: 2.4rem;
-        }
     }
 
     &__content {
         @include mixins.text;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-between;
     }
-
-    &__title {}
-
-    &__author {}
 }
