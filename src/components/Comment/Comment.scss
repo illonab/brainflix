@@ -39,6 +39,7 @@
 
     &__date {
         @include mixins.text-label;
+        text-transform: none;
     }
 
     &__text {
