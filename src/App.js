@@ -15,7 +15,6 @@ class App extends Component {
   };
 
   changeActiveVideo = (id) => {
-    console.log("CHANE ACTIVE VIDEO HAD BEEN CALLED");
     this.setState({
       mainVideo: this.state.videoDetailsData.find((video) => {
         return video.id === id;
