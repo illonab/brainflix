@@ -13,11 +13,17 @@
 
     &__image {
         height: 8rem;
-        width: 25rem;
+        width: 16rem;
         border-radius: 4px;
         background-color: #E1E1E1;
         margin-right: 1.6rem;
         object-fit: cover;
+        flex: 0 0 auto;
+        margin-bottom: 1.6rem;
+
+        @include mixins.desktop {
+            margin-bottom: 2.4rem;
+        }
     }
 
     &__content {

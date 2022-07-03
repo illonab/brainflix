@@ -1,13 +1,13 @@
 import "./MainVideo.scss";
 
-function MainVideo() {
+function MainVideo(props) {
   return (
     <section className="main-video">
       <div className="main-video__wrapper">
         <video
           className="main-video__video"
           controls
-          poster="https://i.imgur.com/l2Xfgpl.jpg"
+          poster={props.video.image}
         ></video>
       </div>
     </section>
