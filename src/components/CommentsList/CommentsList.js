@@ -1,10 +1,12 @@
 import "./CommentsList.scss";
 import Comment from "../Comment/Comment";
 
-function CommentsList() {
+function CommentsList(props) {
   return (
     <div className="video-details__commentsList comments-list">
-      <Comment />
+      {props.list.map((comment, index) => (
+        <Comment key={index} comment={comment} />
+      ))}
     </div>
   );
 }
