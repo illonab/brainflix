@@ -1,0 +1,68 @@
+@use "../../styles/partials/mixins" as mixins;
+
+.comment-form {
+    display: flex;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid #E1E1E1;
+
+    @include mixins.tablet {
+        padding-bottom: 2.4rem;
+    }
+
+    &__avatar {
+        margin-top: 2.3rem;
+
+        @include mixins.tablet {
+            margin-top: 2.3rem;
+        }
+
+        @include mixins.desktop {
+            margin-right: 2.4rem;
+        }
+    }
+
+    &__controls {
+        flex: 1;
+
+        @include mixins.tablet {
+            display: flex;
+            align-items: end;
+        }
+    }
+
+    &__control {
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        @include mixins.text-label;
+        flex: 1;
+    }
+
+    &__comment {
+        resize: none;
+        min-width: 24rem;
+        height: 12rem;
+        border-radius: 4px;
+        border: 1px solid #E1E1E1;
+        padding: 1.2rem;
+        font-family: inherit;
+        margin-top: 0.4rem;
+        overflow: hidden;
+        background-color: #FAFAFA;
+
+        &::placeholder {
+            color: #000;
+        }
+
+        @include mixins.tablet {
+            height: 4rem;
+            margin-right: 1.6rem;
+        }
+    }
+
+    &__submit {
+        @include mixins.btn-icon('../../assets/icon/add_comment.svg');
+        margin-top: 1.6rem;
+    }
+}

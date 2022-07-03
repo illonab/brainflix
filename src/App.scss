@@ -1,0 +1,14 @@
+@use "styles/partials/reset" as *;
+@use "styles/partials/fonts.scss" as *;
+@use "styles/partials/mixins" as mixins;
+@use "styles/partials/cta-btn" as *;
+
+.main {
+    &__wrapper {
+        @include mixins.wrapper;
+
+        @include mixins.desktop {
+            display: flex;
+        }
+    }
+}
