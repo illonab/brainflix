@@ -15,6 +15,7 @@ function VideoDetails(props) {
                 By {props.details.channel}
               </p>
               <time className="video-details__date">
+                {/* Please see the utils.js. I use react-timeago library for date formating. Accordingly to the logic the date formating chabges to human-readeable format after 1 month */}
                 {formatDate(props.details.timestamp)}
               </time>
             </div>
