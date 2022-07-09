@@ -27,7 +27,7 @@
 
         @include mixins.tablet {
             display: flex;
-            align-items: end;
+            align-items: flex-end;
         }
     }
 
@@ -59,6 +59,11 @@
             height: 4rem;
             margin-right: 1.6rem;
         }
+
+        &:focus {
+            border: 2px solid #0095FF;
+        }
+
     }
 
     &__submit {
