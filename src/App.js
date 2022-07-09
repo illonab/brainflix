@@ -1,16 +1,15 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
-import MainVideo from "./components/MainVideo/MainVideo";
-import VideoDetail from "./components/VideoDetails/VideoDetails";
-import VideoList from "./components/VideoList/VideoList";
-import videosData from "./assets/data/videos.json";
-import videoDetailsData from "./assets/data/video-details.json";
+import videosData from "./data/videos.json";
+import videoDetailsData from "./data/video-details.json";
 import React, { Component } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Upload from "./pages/Upload/Upload";
 
 class App extends Component {
   state = {
     videosData,
-    videoDetailsData,
     mainVideo: videoDetailsData[0],
   };
 
@@ -26,17 +25,34 @@ class App extends Component {
     return (
       <>
         <Header />
-        <main className="main">
-          <MainVideo video={this.state.mainVideo} />
-          <div className="main__wrapper">
-            <VideoDetail details={this.state.mainVideo} />
-            <VideoList
-              list={this.state.videosData}
-              mainVideo={this.state.mainVideo}
-              changeActiveVideo={this.changeActiveVideo}
-            />
-          </div>
-        </main>
+        <Switch>
+          <Redirect from="/home" to="/" />
+          <Route
+            path="/"
+            exact
+            render={() => {
+              return (
+                <Home
+                  state={this.state}
+                  changeActiveVideo={this.changeActiveVideo}
+                />
+              );
+            }}
+          />
+          <Route path="/upload" component={Upload}></Route>
+          <Route
+            path="/videos/:videoId"
+            render={(routProps) => {
+              console.log(routProps.match.params.videoId);
+              return (
+                <Home
+                  state={this.state}
+                  changeActiveVideo={this.changeActiveVideo}
+                />
+              );
+            }}
+          ></Route>
+        </Switch>
       </>
     );
   }
