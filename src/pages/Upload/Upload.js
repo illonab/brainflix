@@ -1,13 +1,17 @@
 import "./Upload.scss";
 import uploadVideo from "../../assets/images/upload-video-preview.jpg";
 
-function Upload() {
+function Upload(props) {
+  const successResponse = () => {
+    alert("The video uploaded successfully");
+    props.history.push("/");
+  };
+
   return (
     <section className="upload">
       <div className="upload__wrapper">
         <h1 className="upload__title">Upload video</h1>
-
-        <form className="upload__form" action="">
+        <form className="upload__form" action="" onSubmit={successResponse}>
           <div className="upload__underline">
             <div className="upload__thumbnail">
               <p className="upload__label">VIDEO THUMBNAIL</p>
