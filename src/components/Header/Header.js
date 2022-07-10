@@ -17,7 +17,6 @@ function Header() {
             name="search"
             placeholder="Search"
           />
-
           <Avatar className="header__avatar header__avatar--mobile" />
         </div>
         <Link to={"/upload"}>
