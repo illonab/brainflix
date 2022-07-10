@@ -1,6 +1,5 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
-
 import videoDetailsData from "./data/video-details.json";
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
@@ -12,7 +11,6 @@ import axios from "axios";
 class App extends Component {
   state = {
     videosData: [],
-    mainVideo: videoDetailsData[0],
   };
 
   async componentDidMount() {
@@ -24,14 +22,6 @@ class App extends Component {
     }
   }
 
-  changeActiveVideo = (id) => {
-    this.setState({
-      mainVideo: this.state.videoDetailsData.find((video) => {
-        return video.id === id;
-      }),
-    });
-  };
-
   render() {
     return (
       <>
@@ -42,10 +32,13 @@ class App extends Component {
             path="/"
             exact
             render={() => {
+              if (this.state.videosData.length === 0) {
+                return null;
+              }
               return (
                 <Home
-                  state={this.state}
-                  changeActiveVideo={this.changeActiveVideo}
+                  videos={this.state.videosData}
+                  videoId={this.state.videosData[0].id}
                 />
               );
             }}
@@ -53,12 +46,11 @@ class App extends Component {
           <Route path="/upload" component={Upload}></Route>
           <Route
             path="/videos/:videoId"
-            render={(routProps) => {
-              console.log(routProps.match.params.videoId);
+            render={(routeProps) => {
               return (
                 <Home
-                  state={this.state}
-                  changeActiveVideo={this.changeActiveVideo}
+                  videos={this.state.videosData}
+                  videoId={routeProps.match.params.videoId}
                 />
               );
             }}
