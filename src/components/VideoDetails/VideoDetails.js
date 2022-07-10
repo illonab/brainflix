@@ -31,7 +31,11 @@ function VideoDetails(props) {
         <p className="video-details__comments">
           {props.details.comments.length} Comments
         </p>
-        <CommentForm />
+        <CommentForm
+          list={props.details.comments}
+          videoId={props.details.id}
+          fetchMainVideo={props.fetchMainVideo}
+        />
         <CommentsList list={props.details.comments} />
       </div>
     </section>

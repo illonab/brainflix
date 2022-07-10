@@ -10,10 +10,12 @@ class Home extends Component {
     mainVideo: null,
   };
 
-  async fetchMainVideo() {
+  fetchMainVideo = async (force = false) => {
+    console.log(this.state.mainVideo);
     if (
       this.state.mainVideo === null ||
-      this.state.mainVideo.id !== this.props.videoId
+      this.state.mainVideo.id !== this.props.videoId ||
+      force
     ) {
       try {
         const response = await axios.get(
@@ -24,7 +26,7 @@ class Home extends Component {
         console.log(err);
       }
     }
-  }
+  };
   async componentDidUpdate() {
     this.fetchMainVideo();
   }
@@ -41,7 +43,10 @@ class Home extends Component {
       <main className="main">
         <MainVideo video={this.state.mainVideo} />
         <div className="main__wrapper">
-          <VideoDetail details={this.state.mainVideo} />
+          <VideoDetail
+            details={this.state.mainVideo}
+            fetchMainVideo={this.fetchMainVideo}
+          />
           <VideoList
             list={this.props.videos}
             mainVideo={this.state.mainVideo}
