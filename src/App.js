@@ -13,10 +13,14 @@ class App extends Component {
     videosData: [],
   };
 
+  getData = async () => {
+    const response = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
+    this.setState({ videosData: response.data });
+  };
+
   async componentDidMount() {
     try {
-      const response = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
-      this.setState({ videosData: response.data });
+      this.getData();
     } catch (err) {
       console.log(err);
     }
@@ -43,7 +47,12 @@ class App extends Component {
               );
             }}
           />
-          <Route path="/upload" component={Upload}></Route>
+          <Route
+            path="/upload"
+            render={(routeProps) => {
+              return <Upload getData={this.getData} {...routeProps} />;
+            }}
+          ></Route>
           <Route
             path="/videos/:videoId"
             render={(routeProps) => {
