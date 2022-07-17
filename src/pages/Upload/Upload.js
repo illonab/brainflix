@@ -2,6 +2,7 @@ import "./Upload.scss";
 import uploadVideo from "../../assets/images/upload-video-preview.jpg";
 
 function Upload(props) {
+  console.log(props);
   const successResponse = () => {
     alert("The video uploaded successfully");
     props.history.push("/");

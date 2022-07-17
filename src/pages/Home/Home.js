@@ -11,7 +11,6 @@ class Home extends Component {
   };
 
   fetchMainVideo = async (force = false) => {
-    console.log(this.state.mainVideo);
     if (
       this.state.mainVideo === null ||
       this.state.mainVideo.id !== this.props.videoId ||
