@@ -9,6 +9,7 @@ function Comment(props) {
         <div className="comment__top">
           <p className="comment__name">{props.comment.name}</p>
           <time className="comment__date" title="">
+            {/* Please see the utils.js. I use react-timeago library for date formating. Accordingly to the logic the date formating chabges to human-readeable format after 1 month */}
             {formatDate(props.comment.timestamp)}
           </time>
         </div>

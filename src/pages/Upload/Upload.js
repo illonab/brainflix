@@ -6,12 +6,15 @@ import { API_URL } from "../../config";
 function Upload(props) {
   const successResponse = (e) => {
     e.preventDefault();
+    if (!validateForm(e.target)) {
+      return;
+    }
     axios
       .post(`${API_URL}/videos`, {
         title: e.target.title.value,
         channel: "New channel",
         image: "https://i.imgur.com/l2Xfgpl.jpg",
-        description: e.target.title.description,
+        description: e.target.description.value,
         video: "https://project-2-api.herokuapp.com/stream",
       })
       .then(() => {
@@ -20,7 +23,21 @@ function Upload(props) {
     alert("The video uploaded successfully");
     props.history.push("/");
   };
+  const validateInput = (input) => {
+    if (input.value.trim() === "") {
+      input.classList.add("upload__input--error");
+      return false;
+    }
+    input.classList.remove("upload__input--error");
+    return true;
+  };
 
+  const validateForm = (form) => {
+    let isValid = true;
+    isValid = validateInput(form.title) && isValid;
+    isValid = validateInput(form.description) && isValid;
+    return isValid;
+  };
   return (
     <section className="upload">
       <div className="upload__wrapper">

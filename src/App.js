@@ -1,11 +1,10 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
-import videoDetailsData from "./data/video-details.json";
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Upload from "./pages/Upload/Upload";
-import { API_KEY, API_URL } from "./config";
+import { API_URL } from "./config";
 import axios from "axios";
 
 class App extends Component {
@@ -14,7 +13,7 @@ class App extends Component {
   };
 
   getData = async () => {
-    const response = await axios.get(`${API_URL}/videos?api_key=${API_KEY}`);
+    const response = await axios.get(`${API_URL}/videos`);
     this.setState({ videosData: response.data });
   };
 
@@ -52,7 +51,7 @@ class App extends Component {
             render={(routeProps) => {
               return <Upload getData={this.getData} {...routeProps} />;
             }}
-          ></Route>
+          />
           <Route
             path="/videos/:videoId"
             render={(routeProps) => {
@@ -63,7 +62,7 @@ class App extends Component {
                 />
               );
             }}
-          ></Route>
+          />
         </Switch>
       </>
     );
