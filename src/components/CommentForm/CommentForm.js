@@ -34,7 +34,7 @@ function CommentForm(props) {
 
   return (
     <section className="conversation">
-      <h2 class="conversation__subtitle">Join the Conversation</h2>
+      <h2 className="conversation__subtitle">Join the Conversation</h2>
       <form
         className="conversation__commentForm comment-form"
         action=""

@@ -1,9 +1,22 @@
 import "./Upload.scss";
 import uploadVideo from "../../assets/images/upload-video-preview.jpg";
+import axios from "axios";
+import { API_URL } from "../../config";
 
 function Upload(props) {
-  console.log(props);
-  const successResponse = () => {
+  const successResponse = (e) => {
+    e.preventDefault();
+    axios
+      .post(`${API_URL}/videos`, {
+        title: e.target.title.value,
+        channel: "New channel",
+        image: "https://i.imgur.com/l2Xfgpl.jpg",
+        description: e.target.title.description,
+        video: "https://project-2-api.herokuapp.com/stream",
+      })
+      .then(() => {
+        props.getData();
+      });
     alert("The video uploaded successfully");
     props.history.push("/");
   };
