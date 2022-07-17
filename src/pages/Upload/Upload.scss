@@ -50,8 +50,6 @@
         }
     }
 
-    &__form {}
-
     &__underline {
         @include mixins.tablet {
             border-bottom: 1px solid #E1E1E1;
@@ -153,5 +151,9 @@
             order: 1;
             margin-right: 1.6rem;
         }
+    }
+
+    &__input--error {
+        border: 1px solid #D22D2D;
     }
 }

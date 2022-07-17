@@ -3,7 +3,7 @@ import VideoDetail from "../../components/VideoDetails/VideoDetails";
 import VideoList from "../../components/VideoList/VideoList";
 import React, { Component } from "react";
 import axios from "axios";
-import { API_KEY, API_URL } from "../../config";
+import { API_URL } from "../../config";
 
 class Home extends Component {
   state = {
@@ -18,7 +18,7 @@ class Home extends Component {
     ) {
       try {
         const response = await axios.get(
-          `${API_URL}/videos/${this.props.videoId}?api_key=${API_KEY}`
+          `${API_URL}/videos/${this.props.videoId}`
         );
         this.setState({ mainVideo: response.data });
       } catch (err) {
@@ -26,11 +26,11 @@ class Home extends Component {
       }
     }
   };
-  async componentDidUpdate() {
+  componentDidUpdate() {
     this.fetchMainVideo();
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     this.fetchMainVideo();
   }
 
